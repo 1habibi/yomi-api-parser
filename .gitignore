@@ -1,0 +1,6 @@
+venv
+__pycache__
+.env
+last_sync.txt
+log.txt
+log.txt.*
