@@ -448,7 +448,7 @@ async def sync_relations(conn, cache, anime_id, item, material):
                 if gid:
                     await cur.execute("INSERT IGNORE INTO anime_genres (anime_id, genre_id) VALUES (%s,%s)", (anime_id, gid))
 
-        anime_screenshots = (item.get("anime_screenshots") or []) + ((material or {}).get("anime_screenshots") or [])
+        anime_screenshots = (item.get("screenshots") or []) + ((material or {}).get("screenshots") or [])
         for url in set(anime_screenshots):
             await cur.execute("INSERT INTO anime_screenshots (anime_id, url) VALUES (%s,%s)", (anime_id, url))
 
